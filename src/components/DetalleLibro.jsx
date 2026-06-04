@@ -41,12 +41,12 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
 
         {/* Bloque de datos cortos (Géneros, Dueños y Páginas) */}
         <div className="flex flex-wrap gap-4">
-          <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50 flex-1 min-w-[140px]">
-            <span className="block font-bold text-purple-400 mb-1">Géneros</span>
+          <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50 flex-1 min-w-35">
+            <span className="block font-bold text-purple-400 mb-1">Género</span>
             <span className="text-zinc-300">{libro.genero && libro.genero.length > 0 ? libro.genero.join(', ') : 'No especificado'}</span>
           </div>
-          <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50 flex-1 min-w-[140px]">
-            <span className="block font-bold text-purple-400 mb-1">Dueños</span>
+          <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50 flex-1 min-w-35">
+            <span className="block font-bold text-purple-400 mb-1">Dueño</span>
             <span className="text-zinc-300">{libro.owner && libro.owner.length > 0 ? libro.owner.join(', ') : 'No especificado'}</span>
           </div>
           <div className="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50 flex-none w-full md:w-32">
