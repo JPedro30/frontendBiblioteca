@@ -64,7 +64,7 @@ function App() {
                 
                 <button 
                   onClick={() => setLetraActiva('Todos')}
-                  className={`px-5 py-2 font-bold rounded-xl transition-all ${letraActiva === 'Todos' ? 'bg-purple-600 text-indigo-950 shadow-lg shadow-purple-600/40' : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'}`}
+                  className={`px-5 py-2 font-bold rounded-xl transition-all ${letraActiva === 'Todos' ? 'bg-purple-600 text-indigo-950 shadow-lg shadow-purple-600/40 transition-colors duration-200 ease-in-out' : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'}`}
                 >
                   Todos
                 </button>
@@ -75,7 +75,7 @@ function App() {
                   <button 
                     key={letra}
                     onClick={() => setLetraActiva(letra)}
-                    className={`min-w-5 h-10 flex items-center justify-center font-bold rounded-xl transition-all ${letraActiva === letra ? 'bg-purple-600 text-indigo-950 shadow-lg shadow-purple-600/40' : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'}`}
+                    className={`min-w-5 h-10 flex items-center justify-center font-bold rounded-xl transition-all ${letraActiva === letra ? 'bg-purple-600 text-indigo-950 shadow-lg shadow-purple-600/40 transition-colors duration-200 ease-in-out' : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'}`}
                   >
                     {letra}
                   </button>
