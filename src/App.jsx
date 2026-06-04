@@ -17,7 +17,7 @@ function App() {
 
   const cargarLibros = () => {
     let url = 'https://backendbiblioteca-j3k0.onrender.com/libros';
-    if (letraActiva !== 'Todos') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/letra/${letraActiva}`;
+    if (letraActiva !== 'Todos') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/comienzo/${letraActiva}`;
 
     fetch(url)
       .then(respuesta => respuesta.json())
