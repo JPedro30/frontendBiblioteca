@@ -11,9 +11,10 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
       owner: libroAEditar.owner ? libroAEditar.owner.join(', ') : '',
       sinopsis: libroAEditar.sinopsis || '',
       paginas: libroAEditar.paginas || '', // NUEVO
-      saga: libroAEditar.saga || ''        // NUEVO
+      saga: libroAEditar.saga || '',        // NUEVO
+      valoracion: libroAEditar.valoracion || 0
     } : {
-      titulo: '', autor: '', urlPortada: '', genero: '', owner: '', sinopsis: '', paginas: '', saga: ''
+      titulo: '', autor: '', urlPortada: '', genero: '', owner: '', sinopsis: '', paginas: '', saga: '', valoracion: ''
     }
   );
 
@@ -32,7 +33,8 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
       sinopsis: datos.sinopsis,
       saga: datos.saga,
       // Convertimos el texto del input a número entero para que Java (int) no se queje
-      paginas: datos.paginas ? parseInt(datos.paginas) : 0 
+      paginas: datos.paginas ? parseInt(datos.paginas) : 0 ,
+      valoracion: datos.valoracion
     };
 
     if (libroAEditar) libroGuardar.idLibro = libroAEditar.idLibro;
@@ -102,6 +104,25 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
           <label className="block text-zinc-400 mb-2 text-sm font-medium">Sinopsis</label>
           <textarea name="sinopsis" value={datos.sinopsis} onChange={handleChange} rows="4" placeholder="Escribe de qué trata el libro..."
             className="w-full bg-zinc-800 text-white rounded-lg p-3 outline-none border border-zinc-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none" />
+        </div>
+
+        {/* Selector de Valoración */}
+        <div>
+          <label className="block text-zinc-400 mb-2 text-sm font-medium">Valoración</label>
+          <div className="flex gap-2">
+            {[1, 2, 3, 4, 5].map((estrella) => (
+              <button
+                key={estrella}
+                type="button"
+                onClick={() => setDatos({ ...datos, valoracion: estrella })}
+                className={`text-4xl transition-colors duration-200 hover:scale-110 active:scale-95 ${
+                  datos.valoracion >= estrella ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-zinc-700'
+                }`}
+              >
+                ★
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="flex gap-6 mt-8">
