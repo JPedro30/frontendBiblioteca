@@ -6,7 +6,7 @@ export default function Navbar({ setVista }) {
     <nav className="bg-zinc-950/90 backdrop-blur-md sticky top-0 z-50 border-b border-purple-900/30 text-zinc-100 px-8 py-4 shadow-lg shadow-purple-900/10 flex justify-between items-center">
       
       {/* Texto con degradado morado a fucsia */}
-      <div className="text-2xl font-black tracking-widest bg-linear-to-r from-purple-400 to-purple-800 bg-clip-text text-transparent cursor-pointer" onClick={() => setVista('estanteria')}>
+      <div className="text-2xl font-black tracking-widest bg-linear-to-r from-purple-500 to-purple-800 bg-clip-text text-transparent cursor-pointer" onClick={() => setVista('estanteria')}>
         BIBLIOTECA
       </div>
 
