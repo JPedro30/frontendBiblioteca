@@ -14,13 +14,13 @@ export default function BusquedaLibros({ verDetalle }) {
   const [busquedaRealizada, setBusquedaRealizada] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8081/libros/buscar/autores')
+    fetch('https://backendbiblioteca-j3k0.onrender.com/libros/buscar/autores')
       .then(res => res.json()).then(datos => setListaAutores(datos));
-    fetch('http://localhost:8081/libros/buscar/generos')
+    fetch('https://backendbiblioteca-j3k0.onrender.com/libros/buscar/generos')
       .then(res => res.json()).then(datos => setListaGeneros(datos));
     
     // Ahora esta función de abajo ya existe gracias a la corrección 1
-    fetch('http://localhost:8081/libros/buscar/owners')
+    fetch('https://backendbiblioteca-j3k0.onrender.com/libros/buscar/owners')
       .then(res => res.json()).then(datos => setListaOwners(datos));
   }, []);
 
@@ -29,10 +29,10 @@ export default function BusquedaLibros({ verDetalle }) {
     if (!terminoBusqueda.trim()) return;
 
     let url = '';
-    if (filtroActivo === 'titulo') url = `http://localhost:8081/libros/buscar/titulo/${terminoBusqueda}`;
-    if (filtroActivo === 'autor') url = `http://localhost:8081/libros/buscar/autores/${terminoBusqueda}`;
-    if (filtroActivo === 'genero') url = `http://localhost:8081/libros/buscar/generos/${terminoBusqueda}`;
-    if (filtroActivo === 'owner') url = `http://localhost:8081/libros/buscar/owners/${terminoBusqueda}`;
+    if (filtroActivo === 'titulo') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/titulo/${terminoBusqueda}`;
+    if (filtroActivo === 'autor') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/autores/${terminoBusqueda}`;
+    if (filtroActivo === 'genero') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/generos/${terminoBusqueda}`;
+    if (filtroActivo === 'owner') url = `https://backendbiblioteca-j3k0.onrender.com/libros/buscar/owners/${terminoBusqueda}`;
 
     fetch(url)
       .then(res => res.json())

@@ -38,7 +38,7 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
     if (libroAEditar) libroGuardar.idLibro = libroAEditar.idLibro;
     const metodoHTTP = libroAEditar ? 'PUT' : 'POST';
 
-    fetch('http://localhost:8081/libros', {
+    fetch('https://backendbiblioteca-j3k0.onrender.com/libros', {
       method: metodoHTTP,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(libroGuardar)

@@ -3,7 +3,7 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
   const handleEliminar = () => {
     const confirmar = window.confirm(`¿Seguro que quieres eliminar "${libro.titulo}"?`);
     if (!confirmar) return;
-    fetch(`http://localhost:8081/libros/${libro.idLibro}`, { method: 'DELETE' })
+    fetch(`https://backendbiblioteca-j3k0.onrender.com/libros/${libro.idLibro}`, { method: 'DELETE' })
     .then(() => { alert("Libro eliminado"); volverInicio(); })
     .catch(error => console.error("Error al borrar:", error));
   };
