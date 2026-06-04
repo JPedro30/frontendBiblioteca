@@ -82,7 +82,7 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
           </div>
           <div>
             <label className="block text-zinc-400 mb-2 text-sm font-medium">Dueños (Separados por coma) *</label>
-            <input required type="text" name="owner" value={datos.owner} onChange={handleChange} placeholder="Susana, Juan" className="w-full bg-zinc-800 text-white rounded-lg p-3 outline-none border border-zinc-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" />
+            <input required type="text" name="owner" value={datos.owner} onChange={handleChange} placeholder="Susana, JPedro" className="w-full bg-zinc-800 text-white rounded-lg p-3 outline-none border border-zinc-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all" />
           </div>
         </div>
 

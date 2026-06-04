@@ -21,9 +21,6 @@ export default function Navbar({ setVista }) {
       </div>
 
       <ul className="flex gap-8 font-medium">
-        <li onClick={() => setVista('estanteria')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
-          Inicio
-        </li>
         <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
           Buscador
         </li>
