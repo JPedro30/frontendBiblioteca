@@ -21,18 +21,16 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
           <h3 className="text-xl md:text-2xl text-purple-400 font-serif mt-2">por {libro.autor}</h3>
 
           {/* Renderizado de Estrellas de Valoración */}
-          {libro.valoracion > 0 && (
-            <div className="flex gap-1 mt-4">
-              {[1, 2, 3, 4, 5].map((estrella) => (
-                <span
-                  key={estrella}
-                  className={`text-2xl ${libro.valoracion >= estrella ? 'text-yellow-400' : 'text-zinc-800'}`}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-          )}
+          <div className="flex gap-1 mt-4">
+            {[1, 2, 3, 4, 5].map((estrella) => (
+              <span
+                key={estrella}
+                className={`text-2xl transition-all ${(libro.valoracion || 0) >= estrella ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-zinc-800'}`}
+              >
+                ★
+              </span>
+            ))}
+          </div>
 
           <span className="inline-block bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full text-sm font-bold mt-3 border border-purple-500/30">
             Saga: {libro.saga || 'Independiente'}
@@ -81,7 +79,7 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
       <div className="w-48 h-72 md:w-64 md:h-96 mx-auto bg-zinc-950 rounded-xl shadow-2xl shrink-0 flex items-center justify-center overflow-hidden border border-zinc-800 relative md:sticky md:top-24 order-1 md:order-2">
         {libro.urlPortada ? <img src={libro.urlPortada} alt="Portada" className="w-full h-full object-cover" /> : <span className="text-zinc-600 font-medium">Sin portada</span>}
       </div>
-      
+
     </div>
   );
 }
