@@ -78,7 +78,7 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
       </div>
 
       {/* CAMBIO 3: 'order-1 md:order-2' -> En móvil va arriba del todo, en PC a la derecha. Ajustamos tamaño para móvil */}
-      <div className="w-48 h-72 md:w-64 md:h-96 mx-auto bg-zinc-950 rounded-xl shadow-2xl shrink-0 flex items-center justify-center overflow-hidden border border-zinc-800 sticky top-24 order-1 md:order-2">
+      <div className="w-48 h-72 md:w-64 md:h-96 mx-auto bg-zinc-950 rounded-xl shadow-2xl shrink-0 flex items-center justify-center overflow-hidden border border-zinc-800 relative md:sticky md:top-24 order-1 md:order-2">
         {libro.urlPortada ? <img src={libro.urlPortada} alt="Portada" className="w-full h-full object-cover" /> : <span className="text-zinc-600 font-medium">Sin portada</span>}
       </div>
       
