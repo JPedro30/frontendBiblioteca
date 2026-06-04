@@ -53,7 +53,7 @@ function App() {
 
             {/* 1. LA ESTANTERÍA (Ahora está arriba) */}
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-12 mb-20">
-              {libros.map((libro) => (
+              {libros?.map((libro) => (
                 <LibroCard key={libro.idLibro} libro={libro} onClick={() => verDetalle(libro)} />
               ))}
             </div>
