@@ -11,13 +11,13 @@ export default function Navbar({ setVista }) {
       </div>
 
       <ul className="flex gap-8 font-medium">
-        <li onClick={() => setVista('estanteria')} className="hover:text-purple-400 cursor-pointer transition-colors duration-300">
+        <li onClick={() => setVista('estanteria')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
           Inicio
         </li>
-        <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-colors duration-300">
+        <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
           Buscador
         </li>
-        <li onClick={() => setVista('formulario')} className="cursor-pointer transition-colors duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold">
+        <li onClick={() => setVista('formulario')} className="cursor-pointer transition-all duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold">
           + Añadir Libro
         </li>
       </ul>
