@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useState, useEffect } from 'react';
 import './App.css'
-import Navbar from './components/Navbar'
+import NavBar from './components/NavBar'
 import LibroCard from './components/LibroCard'
 import FormularioLibro from './components/FormularioLibro'
 import DetalleLibro from './components/DetalleLibro'
@@ -37,7 +37,7 @@ function App() {
   return (
     // Fondo moderno súper oscuro (zinc-950)
     <div className="min-h-screen bg-zinc-800 flex flex-col relative text-zinc-200">
-      <Navbar setVista={setVista} />
+      <NavBar setVista={setVista} />
 
       <main className="flex-1 w-full px-2 py-10 flex flex-col items-center">
         
