@@ -21,7 +21,7 @@ export default function Navbar({ setVista }) {
       </div>
 
       {/* Menú de enlaces: flex-wrap por si no caben, y texto un pelín más pequeño en móvil */}
-      <ul className="flex flex-wrap justify-center gap-4 md:gap-8 font-medium text-sm md:text-base">
+      <ul className="flex flex-wrap justify-center gap-4 md:gap-8 font-medium text-base md:text-base">
         <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
           Buscador
         </li>
