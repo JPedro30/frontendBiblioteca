@@ -52,7 +52,7 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
 
   return (
     <div className="max-w-3xl mx-auto bg-zinc-900/80 backdrop-blur-sm p-10 rounded-2xl shadow-2xl shadow-purple-900/10 mt-10 border border-purple-500/20">
-      <h2 className="text-3xl font-bold bg-linear-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent mb-8 text-center">
+      <h2 className="text-3xl font-bold bg-linear-to-r from-purple-400 to-purple-800 bg-clip-text text-transparent mb-8 text-center">
         {libroAEditar ? 'Editar Libro' : 'Añadir Nuevo Libro'}
       </h2>
       
