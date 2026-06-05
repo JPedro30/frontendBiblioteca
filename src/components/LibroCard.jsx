@@ -2,11 +2,11 @@
 
 export default function LibroCard({ libro, onClick }) {
   return (
-    // Balda moderna oscura con sombra morada
-    <div onClick={onClick} className="flex flex-col justify-end border-b-10 border-amber-950 w-36 sm:w-40 h-60 px-2 pb-1 relative group">
+    // Ampliamos el ancho (w) y el alto (h) para tablet (sm) y ordenador (lg)
+    <div onClick={onClick} className="flex flex-col justify-end border-b-10 border-amber-950 w-36 sm:w-48 lg:w-52 h-60 sm:h-72 lg:h-80 px-2 pb-1 relative group">
       
-      {/* IMPORTANTE: Añadimos 'relative' a este contenedor para poder superponer las estrellas */}
-      <div className="w-full h-52 bg-zinc-800 rounded-md shadow-lg flex items-center justify-center cursor-pointer group-hover:animate-slide-out-top transition-all duration-200 overflow-hidden border border-zinc-700 group-hover:border-purple-500/50 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] relative">
+      {/* IMPORTANTE: Ampliamos también el alto del "libro" en sí (h-52 -> h-64 -> h-72) */}
+      <div className="w-full h-52 sm:h-64 lg:h-72 bg-zinc-800 rounded-md shadow-lg flex items-center justify-center cursor-pointer group-hover:animate-slide-out-top transition-all duration-200 overflow-hidden border border-zinc-700 group-hover:border-purple-500/50 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] relative">
         
         {libro.urlPortada ? (
           <img src={libro.urlPortada} alt={`Portada de ${libro.titulo}`} className="w-full h-full object-cover" />
