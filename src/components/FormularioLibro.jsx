@@ -62,43 +62,43 @@ export default function FormularioLibro({ volverInicio, libroAEditar }) {
         
         <div>
           <label className="block text-amber-200/80 mb-2 text-sm font-medium">Título *</label>
-          <input required type="text" name="titulo" value={datos.titulo} onChange={handleChange} className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+          <input required type="text" name="titulo" value={datos.titulo} onChange={handleChange} className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">Autor *</label>
-            <input required type="text" name="autor" value={datos.autor} onChange={handleChange} className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input required type="text" name="autor" value={datos.autor} onChange={handleChange} className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
           <div>
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">Saga</label>
-            <input type="text" name="saga" value={datos.saga} onChange={handleChange} placeholder="Ej: Nacidos de la bruma" className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input type="text" name="saga" value={datos.saga} onChange={handleChange} placeholder="Ej: Nacidos de la bruma" className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
           <div>
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">Géneros (Separados por coma) *</label>
-            <input required type="text" name="genero" value={datos.genero} onChange={handleChange} placeholder="Fantasía, Drama" className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input required type="text" name="genero" value={datos.genero} onChange={handleChange} placeholder="Fantasía, Drama" className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
           <div>
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">Dueños (Separados por coma) *</label>
-            <input required type="text" name="owner" value={datos.owner} onChange={handleChange} placeholder="Susana, JPedro" className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input required type="text" name="owner" value={datos.owner} onChange={handleChange} placeholder="Susana, JPedro" className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-3">
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">URL de la Portada *</label>
-            <input required type="text" name="urlPortada" value={datos.urlPortada} onChange={handleChange} placeholder="https://..." className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input required type="text" name="urlPortada" value={datos.urlPortada} onChange={handleChange} placeholder="https://..." className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
           <div className="flex-1">
             <label className="block text-amber-200/80 mb-2 text-sm font-medium">Nº Páginas *</label>
-            <input required type="number" name="paginas" value={datos.paginas} onChange={handleChange} min="1" className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
+            <input required type="number" name="paginas" value={datos.paginas} onChange={handleChange} min="1" className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder:text-amber-900/60" />
           </div>
         </div>
         
         <div>
           <label className="block text-amber-200/80 mb-2 text-sm font-medium">Sinopsis</label>
           <textarea name="sinopsis" value={datos.sinopsis} onChange={handleChange} rows="4" placeholder="Escribe de qué trata el libro..."
-            className="w-full bg-[#F4EBE1] text-amber-50 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none placeholder:text-amber-900/60" />
+            className="w-full bg-[#F4EBE1] text-amber-700/80 rounded-lg p-3 outline-none border border-amber-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none placeholder:text-amber-900/60" />
         </div>
 
         <div>
