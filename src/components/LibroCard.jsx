@@ -6,7 +6,7 @@ export default function LibroCard({ libro, onClick }) {
     <div onClick={onClick} className="flex flex-col justify-end border-b-10 border-amber-950 w-36 sm:w-48 lg:w-52 h-60 sm:h-72 lg:h-80 px-2 pb-1 relative group">
       
       {/* IMPORTANTE: Ampliamos también el alto del "libro" en sí (h-52 -> h-64 -> h-72) */}
-      <div className="w-full h-52 sm:h-64 lg:h-72 bg-zinc-800 rounded-md shadow-lg flex items-center justify-center cursor-pointer group-hover:animate-slide-out-top transition-all duration-200 overflow-hidden border border-zinc-700 group-hover:border-purple-500/50 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] relative">
+      <div className="w-full h-52 sm:h-64 lg:h-72 bg-zinc-800 rounded-md shadow-lg flex items-center justify-center cursor-pointer group-hover:animate-slide-out-top transition-all duration-200 overflow-hidden border border-zinc-700 group-hover:border-amber-600/80 group-hover:shadow-yellow-600/80 relative">
         
         {libro.urlPortada ? (
           <img src={libro.urlPortada} alt={`Portada de ${libro.titulo}`} className="w-full h-full object-cover" />

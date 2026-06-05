@@ -2,7 +2,8 @@
 
 export default function Navbar({ setVista }) {
   return (
-    <nav className="bg-zinc-950/90 backdrop-blur-md sticky top-0 z-50 border-b border-purple-900/30 text-zinc-100 px-4 md:px-8 py-4 shadow-lg shadow-purple-900/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+    // 1. FONDO Y SOMBRAS: Cambiamos el zinc y el purple por tonos amber (madera oscura)
+    <nav className="bg-amber-950/85 backdrop-blur-md sticky top-0 z-50 border-b border-amber-900/50 text-amber-50 px-4 md:px-8 py-4 shadow-lg shadow-amber-900/40 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
 
       {/* Grupo de Logo y Texto */}
       <div
@@ -14,8 +15,8 @@ export default function Navbar({ setVista }) {
           alt="Logo Biblioteca"
           className="w-12 h-12 mb-4 md:w-22 md:h-22 object-contain"
         />
-        {/* Texto más pequeño en móvil (text-xl) y normal en PC (md:text-2xl) */}
-        <div className="text-xl md:text-4xl font-black tracking-widest bg-purple-600 bg-clip-text text-transparent text-center">
+        {/* 2. TÍTULO: Usamos un degradado dorado (de amber-400 a yellow-600) en lugar de morado */}
+        <div className="text-xl md:text-4xl font-black tracking-widest bg-linear-to-r from-purple-100 to-yellow-600 bg-clip-text text-transparent text-center drop-shadow-sm">
           SUSANA'S LIBRARY
         </div>
       </div>
@@ -26,7 +27,8 @@ export default function Navbar({ setVista }) {
         {/* Enlace 1: Buscador */}
         <li 
           onClick={() => setVista('busqueda')} 
-          className="flex flex-col items-center gap-0 hover:text-purple-400 cursor-pointer transition-all duration-200"
+          // 3. HOVER: Cambiamos el hover:text-purple por hover:text-amber-400 (un amarillo cálido)
+          className="flex flex-col items-center gap-0 hover:text-amber-400 cursor-pointer transition-all duration-200"
         >
           <img
             src="/buscarLibro.png"
@@ -39,7 +41,8 @@ export default function Navbar({ setVista }) {
         {/* Enlace 2: Agregar Libro */}
         <li 
           onClick={() => setVista('formulario')} 
-          className="flex flex-col items-center gap-2 cursor-pointer transition-all duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold"
+          // 4. COLORES BASE: Cambiamos el texto base y el hover a tonos ámbar
+          className="flex flex-col items-center gap-2 cursor-pointer transition-all duration-300 text-amber-500 hover:text-amber-300 font-semibold"
         >
           <img
             src="/agregarLibro.png"
