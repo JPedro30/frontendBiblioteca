@@ -24,14 +24,14 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
             {[1, 2, 3, 4, 5].map((estrella) => (
               <span
                 key={estrella}
-                className={`text-2xl transition-all ${(libro.valoracion || 0) >= estrella ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-amber-900/80'}`}
+                className={`text-2xl transition-all ${(libro.valoracion || 0) >= estrella ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-amber-700/80'}`}
               >
                 ★
               </span>
             ))}
           </div>
 
-          <span className="inline-block bg-[#F4EBE1] text-amber-700 px-3 py-1 rounded-full text-sm font-bold mt-3 border border-amber-700/50">
+          <span className="inline-block bg-amber-600 text-[#F4EBE1] px-4 py-2 rounded-full text-sm font-bold mt-3 border border-amber-700/50">
             Saga: {libro.saga || 'Independiente'}
           </span>
         </div>
@@ -39,23 +39,23 @@ export default function DetalleLibro({ libro, volverInicio, irAEditar }) {
         {/* Bloque de datos cortos (Género, Dueño y Páginas) */}
         <div className="flex flex-wrap gap-4">
           <div className="bg-[#F4EBE1] p-4 rounded-xl border border-amber-800/50 flex-1 min-w-35">
-            <span className="block font-bold text-amber-700 mb-1">Género</span>
-            <span className="text-amber-500">{libro.genero && libro.genero.length > 0 ? libro.genero.join(', ') : 'No especificado'}</span>
+            <span className="block font-bold text-amber-900 mb-1">Género</span>
+            <span className="text-amber-700">{libro.genero && libro.genero.length > 0 ? libro.genero.join(', ') : 'No especificado'}</span>
           </div>
           <div className="bg-[#F4EBE1] p-4 rounded-xl border border-amber-800/50 flex-1 min-w-35">
-            <span className="block font-bold text-amber-700 mb-1">Dueño</span>
-            <span className="text-amber-500">{libro.owner && libro.owner.length > 0 ? libro.owner.join(', ') : 'No especificado'}</span>
+            <span className="block font-bold text-amber-900 mb-1">Dueño</span>
+            <span className="text-amber-700">{libro.owner && libro.owner.length > 0 ? libro.owner.join(', ') : 'No especificado'}</span>
           </div>
           <div className="bg-[#F4EBE1] p-4 rounded-xl border border-amber-800/50 flex-none w-full md:w-32">
-            <span className="block font-bold text-amber-700 mb-1">Páginas</span>
-            <span className="text-amber-500">{libro.paginas || 'No especificado'}</span>
+            <span className="block font-bold text-amber-900 mb-1">Páginas</span>
+            <span className="text-amber-700">{libro.paginas || 'No especificado'}</span>
           </div>
         </div>
 
         {/* Sinopsis */}
         <div className="bg-[#F4EBE1] p-4 rounded-xl border border-amber-800/50 mt-2">
-          <h4 className="font-bold text-amber-700 mb-2">Sinopsis</h4>
-          <p className="text-amber-600 text-sm leading-relaxed whitespace-pre-wrap">
+          <h4 className="font-bold text-amber-900 mb-2">Sinopsis</h4>
+          <p className="text-amber-700 text-sm leading-relaxed whitespace-pre-wrap">
             {libro.sinopsis || 'No hay sinopsis disponible para este libro.'}
           </p>
         </div>
