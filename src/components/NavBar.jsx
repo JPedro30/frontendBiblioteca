@@ -15,7 +15,7 @@ export default function Navbar({ setVista }) {
           className="w-8 h-8 md:w-14 md:h-14 object-contain"
         />
         {/* Texto más pequeño en móvil (text-xl) y normal en PC (md:text-2xl) */}
-        <div className="text-xl md:text-4xl font-serif font-black tracking-widest bg-purple-600 bg-clip-text text-transparent text-center">
+        <div className="text-xl md:text-4xl font-black tracking-widest bg-purple-600 bg-clip-text text-transparent text-center">
           Susana's Library
         </div>
       </div>

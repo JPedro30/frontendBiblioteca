@@ -64,7 +64,7 @@ function App() {
 
         {/* 📚 ESTADO 2: ESTANTERÍA CARGADA Y LISTA */}
         {vista === 'estanteria' && !cargando && (
-          <div className="w-full max-w-300 flex flex-col min-h-full">
+          <div className="w-full max-w-400 flex flex-col min-h-full">
             
             {/* Aviso si la letra no tiene libros */}
             {libros.length === 0 && (
