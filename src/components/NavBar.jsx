@@ -20,24 +20,35 @@ export default function Navbar({ setVista }) {
         </div>
       </div>
 
-      {/* Menú de enlaces: flex-wrap por si no caben, y texto un pelín más pequeño en móvil */}
+      {/* Menú de enlaces */}
       <ul className="flex flex-wrap justify-center gap-4 md:gap-8 font-medium text-base md:text-lg">
-        <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
+        
+        {/* Enlace 1: Buscador */}
+        <li 
+          onClick={() => setVista('busqueda')} 
+          className="flex items-center gap-2 hover:text-purple-400 cursor-pointer transition-all duration-200"
+        >
           <img
             src="/buscarLibro.png"
             alt="Buscar"
             className="w-4 h-4 md:w-7 md:h-7 object-contain"
           />
-          Buscador
+          <span>Buscador</span>
         </li>
-        <li onClick={() => setVista('formulario')} className="cursor-pointer transition-all duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold">
+        
+        {/* Enlace 2: Agregar Libro */}
+        <li 
+          onClick={() => setVista('formulario')} 
+          className="flex items-center gap-2 cursor-pointer transition-all duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold"
+        >
           <img
             src="/agregarLibro.png"
             alt="Agregar"
             className="w-4 h-4 md:w-7 md:h-7 object-contain"
           />
-          Agregar Libro
+          <span>Agregar Libro</span>
         </li>
+        
       </ul>
 
     </nav>
