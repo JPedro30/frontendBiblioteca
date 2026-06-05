@@ -10,7 +10,7 @@ export default function Navbar({ setVista }) {
         onClick={() => setVista('estanteria')}
       >
         <img
-          src="/logoBiblio.png"
+          src="/logoLibrary.png"
           alt="Logo Biblioteca"
           className="w-8 h-8 md:w-14 md:h-14 object-contain"
         />
@@ -23,10 +23,20 @@ export default function Navbar({ setVista }) {
       {/* Menú de enlaces: flex-wrap por si no caben, y texto un pelín más pequeño en móvil */}
       <ul className="flex flex-wrap justify-center gap-4 md:gap-8 font-medium text-base md:text-lg">
         <li onClick={() => setVista('busqueda')} className="hover:text-purple-400 cursor-pointer transition-all duration-200">
+          <img
+            src="/buscarLibro.png"
+            alt="Buscar"
+            className="w-4 h-4 md:w-7 md:h-7 object-contain"
+          />
           Buscador
         </li>
         <li onClick={() => setVista('formulario')} className="cursor-pointer transition-all duration-300 text-purple-400 hover:text-fuchsia-300 font-semibold">
-          + Añadir Libro
+          <img
+            src="/agregarLibro.png"
+            alt="Agregar"
+            className="w-4 h-4 md:w-7 md:h-7 object-contain"
+          />
+          Agregar Libro
         </li>
       </ul>
 
