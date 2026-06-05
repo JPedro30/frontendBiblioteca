@@ -44,9 +44,9 @@ function App() {
     // 1. EL FONDO: bg-[#F4EBE1] (pergamino/madera clara) y texto text-amber-950. Añadimos overflow-hidden.
     <div className="min-h-screen bg-[#F4EBE1] flex flex-col relative text-amber-950">
       
-      {/* 2. LAS ENREDADERAS (Fijas a los lados, no estorban al hacer clic gracias a pointer-events-none) */}
-      <div className="fixed top-0 left-0 w-24 md:w-60 h-full bg-[url('/enredadera.png')] bg-repeat-y opacity-80 pointer-events-none z-0"></div>
-      <div className="fixed top-0 right-0 w-24 md:w-60 h-full bg-[url('/enredadera.png')] bg-repeat-y opacity-80 pointer-events-none z-0 scale-x-[-1]"></div>
+      {/* 2. LAS ENREDADERAS (Ajustadas para móvil y sin cortes) */}
+      <div className="fixed top-0 left-0 w-16 md:w-32 lg:w-40 h-full bg-[url('/enredadera.png')] bg-size[100%_auto] bg-repeat-y opacity-80 pointer-events-none z-0"></div>
+      <div className="fixed top-0 right-0 w-16 md:w-32 lg:w-40 h-full bg-[url('/enredadera.png')] bg-size[100%_auto] bg-repeat-y opacity-80 pointer-events-none z-0 scale-x-[-1]"></div>
 
       {/* 3. EL CONTENIDO PRINCIPAL (Con z-10 para estar por encima de las hojas) */}
       <div className="relative z-10 flex flex-col min-h-screen">
