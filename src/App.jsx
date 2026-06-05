@@ -10,6 +10,7 @@ import BusquedaLibros from './components/BusquedaLibros'
 function App() {
   const [vista, setVista] = useState('estanteria'); 
   const [libros, setLibros] = useState([]);
+  const [cargando, setCargando] = useState(true);
   const [libroSeleccionado, setLibroSeleccionado] = useState(null);
   const [letraActiva, setLetraActiva] = useState('Todos');
 
@@ -22,7 +23,12 @@ function App() {
     fetch(url)
       .then(respuesta => respuesta.json())
       .then(datos => setLibros(datos))
-      .catch(error => console.error("Error al cargar:", error));
+      .catch(error => console.error("Error al cargar:", error))
+      .finally(() => {
+      // Magia: El finally SIEMPRE se ejecuta al terminar, 
+      // ya sea con éxito o con error. Aquí apagamos el spinner.
+      setCargando(false);
+    });
   };
 
   useEffect(() => {
@@ -41,7 +47,23 @@ function App() {
 
       <main className="flex-1 w-full px-2 py-10 flex flex-col items-center">
         
-        {vista === 'estanteria' && (
+        {/* ⏳ ESTADO 1: CARGANDO LA ESTANTERÍA */}
+        {vista === 'estanteria' && cargando && (
+          <div className="flex flex-col items-center justify-center h-[60vh] px-4 text-center">
+            {/* El círculo que gira con brillo morado */}
+            <div className="w-16 h-16 border-4 border-zinc-800 border-t-purple-500 rounded-full animate-spin shadow-[0_0_15px_rgba(168,85,247,0.5)] mb-6"></div>
+            
+            <h2 className="text-2xl font-bold text-purple-400 animate-pulse mb-2">
+              Despertando al servidor...
+            </h2>
+            <p className="text-zinc-400 max-w-md">
+              Como usamos un servidor gratuito, si no ha habido actividad reciente puede tardar unos <span className="text-zinc-200 font-bold">50 segundos</span> en arrancar. ¡Gracias por la paciencia!
+            </p>
+          </div>
+        )}
+
+        {/* 📚 ESTADO 2: ESTANTERÍA CARGADA Y LISTA */}
+        {vista === 'estanteria' && !cargando && (
           <div className="w-full max-w-6xl flex flex-col min-h-full">
             
             {/* Aviso si la letra no tiene libros */}
@@ -51,14 +73,14 @@ function App() {
               </p>
             )}
 
-            {/* 1. LA ESTANTERÍA (Ahora está arriba) */}
+            {/* 1. LA ESTANTERÍA */}
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-12 mb-20">
               {libros?.map((libro) => (
                 <LibroCard key={libro.idLibro} libro={libro} onClick={() => verDetalle(libro)} />
               ))}
             </div>
 
-            {/* 2. GLOSARIO A-Z (Ahora está abajo y flotante) */}
+            {/* 2. GLOSARIO A-Z */}
             <div className="sticky bottom-6 w-full max-w-4xl mx-auto z-40 mt-auto">
               <div className="no-scrollbar flex flex-nowrap overflow-x-auto justify-start xl:justify-center gap-2 bg-zinc-900/90 backdrop-blur-md p-3 rounded-2xl shadow-2xl shadow-purple-900/20 border border-purple-500/20">
                 
@@ -86,7 +108,7 @@ function App() {
           </div>
         )}
 
-        {/* RESTO DE VISTAS (Aquí no sale el glosario) */}
+        {/* RESTO DE VISTAS (Aquí no sale el glosario ni afecta el cargando) */}
         {vista === 'detalle' && <DetalleLibro libro={libroSeleccionado} volverInicio={() => setVista('estanteria')} irAEditar={() => setVista('editar')} />}
         {vista === 'formulario' && <FormularioLibro volverInicio={() => setVista('estanteria')} />}
         {vista === 'editar' && <FormularioLibro volverInicio={() => setVista('estanteria')} libroAEditar={libroSeleccionado} />}
